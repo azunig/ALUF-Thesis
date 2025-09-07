@@ -1,0 +1,7 @@
+# macOS system file
+.DS_Store
+
+# Compiled output directory
+out/
+com.sh
+doc/

@@ -1,0 +1,117 @@
+\documentclass[12pt]{report}
+\usepackage{placeins}
+% -------- Idioma primero --------
+\usepackage[spanish,shorthands=off]{babel}
+\usepackage{csquotes}
+
+% -------- Fuentes para LuaLaTeX --------
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+\setmainfont{Latin Modern Roman}
+\setmonofont{DejaVu Sans Mono}[Scale=MatchLowercase]
+
+% -------- Maquetación y utilidades --------
+\usepackage{geometry}
+\geometry{a4paper, margin=2.5cm}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{xcolor}
+\usepackage{soul}
+\definecolor{mylime}{HTML}{CCFF00} % opcional: “lime” seguro
+\sethlcolor{mylime}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{longtable}
+
+\usepackage{csvsimple}
+
+\usepackage{xspace}
+\newcommand{\LCOW}{\textsc{LCOW}\xspace}
+
+\usepackage{siunitx}
+\sisetup{
+  output-decimal-marker = {,}, % coma decimal
+  group-separator       = {.}, % punto de miles
+  group-minimum-digits  = 3,
+  reset-text-series     = false,
+  text-series-to-math   = true
+}
+
+\usepackage{makecell}
+\renewcommand\theadfont{\bfseries}
+
+\usepackage{newunicodechar}
+\newunicodechar{≥}{\ensuremath{\ge}}
+\newunicodechar{≤}{\ensuremath{\le}}
+\newunicodechar{↕}{\ensuremath{\updownarrow}}
+
+\usepackage{threeparttable}
+\usepackage[ruled,vlined]{algorithm2e}
+
+% Si mantienes esto, ya no hace falta, pero no molesta:
+\AtBeginDocument{\shorthandoff{"<>.!}}
+
+% -------- BibLaTeX + APA (Biber) --------
+\usepackage[backend=biber,style=apa,language=spanish]{biblatex}
+\DeclareLanguageMapping{spanish}{spanish-apa}
+\addbibresource{src/referencias.bib}
+
+% -------- Título del abstract --------
+\addto\captionsspanish{\renewcommand{\abstractname}{Abstract}}
+
+% -------- Entorno abstract sin índice --------
+%\makeatletter
+%\renewenvironment{abstract}{%
+%  \chapter*{\abstractname}%
+%  \markboth{\abstractname}{\abstractname}%
+%}{}
+%\makeatother
+
+% -------- Siempre al final --------
+\usepackage{hyperref}
+\hypersetup{hidelinks}
+
+\title{Governance by Discourse: Forest Adaptation, Institutional Bricolage, and Justice in Germany and Chile}
+\author{Aharon Esteban Valdés-Zúñiga \\ Global Studies Programme \\ University of Freiburg}
+\date{\vspace{-5ex}}
+
+\begin{document}
+\sloppy
+
+% ======= Front matter en romanos desde el inicio =======
+\pagenumbering{roman}
+\setcounter{page}{1}
+
+% -------- Portada --------
+\input{src/portada}
+
+% -------- Resumen --------
+%\begin{abstract}
+%\input{src/chapters/00-abstract.tex}
+%\end{abstract}
+
+% -------- Índice --------
+\clearpage
+\renewcommand{\contentsname}{Índice}
+\tableofcontents
+
+% ======= Cuerpo en arábigos =======
+\clearpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+% -------- Cuerpo --------
+\input{src/chapters/00-proposal.tex}
+%\input{src/chapters/01-introduccion.tex}
+%\input{src/chapters/02-marco-teorico.tex}
+%\input{src/chapters/03-metodologia.tex}
+%\input{src/chapters/04-resultados.tex}
+%\input{src/chapters/05-discusion.tex}
+%\input{src/chapters/06-conclusiones.tex}
+
+% -------- Bibliografía --------
+\nocite{*}
+\printbibliography
+
+\end{document}
