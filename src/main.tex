@@ -1,7 +1,7 @@
 \documentclass[12pt]{report}
 \usepackage{placeins}
 % -------- Idioma primero --------
-\usepackage[spanish,shorthands=off]{babel}
+\usepackage[english,shorthands=off]{babel}
 \usepackage{csquotes}
 
 % -------- Fuentes para LuaLaTeX --------
@@ -53,8 +53,8 @@
 \AtBeginDocument{\shorthandoff{"<>.!}}
 
 % -------- BibLaTeX + APA (Biber) --------
-\usepackage[backend=biber,style=apa,language=spanish]{biblatex}
-\DeclareLanguageMapping{spanish}{spanish-apa}
+\usepackage[backend=biber,style=apa,language=english]{biblatex}
+\DeclareLanguageMapping{english}{english-apa}
 \addbibresource{src/referencias.bib}
 
 % -------- Título del abstract --------
@@ -93,7 +93,7 @@
 
 % -------- Índice --------
 \clearpage
-\renewcommand{\contentsname}{Índice}
+\renewcommand{\contentsname}{Index}
 \tableofcontents
 
 % ======= Cuerpo en arábigos =======
