@@ -23,7 +23,7 @@
 \usepackage{tabularx}
 \usepackage{array}
 \usepackage{longtable}
-
+\usepackage{svg}
 \usepackage{csvsimple}
 
 \usepackage{xspace}
@@ -53,9 +53,13 @@
 \AtBeginDocument{\shorthandoff{"<>.!}}
 
 % -------- BibLaTeX + APA (Biber) --------
-\usepackage[backend=biber,style=apa,language=english]{biblatex}
-\DeclareLanguageMapping{english}{english-apa}
-\addbibresource{src/referencias.bib}
+\usepackage[backend=biber,
+            style=apa,
+            citestyle=authoryear,
+            maxcitenames=2,
+            uniquelist=false,
+            sorting=nyt]{biblatex}
+\addbibresource{referencias.bib}
 
 % -------- Título del abstract --------
 \addto\captionsspanish{\renewcommand{\abstractname}{Abstract}}
@@ -72,7 +76,7 @@
 \usepackage{hyperref}
 \hypersetup{hidelinks}
 
-\title{Governance by Discourse: Forest Adaptation, Institutional Bricolage, and Justice in Germany and Chile}
+\title{Ideational Bricoleurs in Forest Adaptation Governance: Germany--Chile Comparison}
 \author{Aharon Esteban Valdés-Zúñiga \\ Global Studies Programme \\ University of Freiburg}
 \date{\vspace{-5ex}}
 
@@ -87,9 +91,8 @@
 \input{src/portada}
 
 % -------- Resumen --------
-%\begin{abstract}
-%\input{src/chapters/00-abstract.tex}
-%\end{abstract}
+\input{src/proposal/00-abstract.tex}
+
 
 % -------- Índice --------
 \clearpage
@@ -102,16 +105,26 @@
 \setcounter{page}{1}
 
 % -------- Cuerpo --------
-\input{src/chapters/00-proposal.tex}
+\input{src/proposal/01-introduction.tex}
+\input{src/proposal/02-rq.tex}
+\input{src/proposal/03-proposition.tex}
+\input{src/proposal/04-lr.tex}
+\input{src/proposal/05-cframework.tex}
+\input{src/proposal/06-methodology.tex}
+\input{src/proposal/07-closing.tex}
+\clearpage
+\input{src/proposal/08-plan.tex}
+%\input{src/chapters/00-proposal.tex}
+%\input{src/chapters/00-proposition.tex}
+%\input{src/chapters/00-plan.tex}
 %\input{src/chapters/01-introduccion.tex}
 %\input{src/chapters/02-marco-teorico.tex}
 %\input{src/chapters/03-metodologia.tex}
 %\input{src/chapters/04-resultados.tex}
 %\input{src/chapters/05-discusion.tex}
 %\input{src/chapters/06-conclusiones.tex}
-
 % -------- Bibliografía --------
-\nocite{*}
+
 \printbibliography
 
 \end{document}
